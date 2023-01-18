@@ -1,0 +1,38 @@
+<section style="background-color: #eee;">
+  <div class="container py-5">
+    
+
+    <div class="row">
+    {{#each products}}
+      <div class="col-12 col-md-3 col-lg-4 col-xl-4">
+        <div class="card text-black">
+          <img src="/product-images/{{this.product._id}}.jpg"
+            class="card-img-top ms-3" alt="Apple Computer" style="width: 366px; height: 25rem;"  />
+          <div class="card-body">
+            <div class="text-center">
+              <h5 class="card-title">{{this.product.Name}}</h5>
+              <p class="text-muted mb-4">{{this.product.Category}}</p>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between">
+                <span>Price</span><span>Rs.{{this.product.Price}}</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span>Qty</span><span>{{this.quantity}}</span>
+              </div>
+              {{!-- <div class="d-flex justify-content-between">
+                <span>Vesa Mount Adapter</span><span>$199</span>
+              </div> --}}
+            </div>
+            <div class="d-flex justify-content-between total font-weight-bold mt-4">
+              <span>Total</span><span>{{this.quantity}}*{{this.product.Price}}</span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    
+  </div>
+</section>
